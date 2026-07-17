@@ -1,5 +1,5 @@
 const STATS = [
-  { label: "Rooms & Suites", value: "48" },
+  { label: "Rooms & Suites", value: "10" },
   { label: "Years of Hospitality", value: "40" },
   { label: "Guest Rating", value: "4.9" },
 ];
