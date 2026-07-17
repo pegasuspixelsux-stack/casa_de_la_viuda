@@ -4,6 +4,7 @@ import type { Property } from "@/types/property";
 
 const SIMULATED_LATENCY_MS = 150;
 
+// This file is the seam that gets replaced with real Firebase calls; callers don't change.
 export async function getProperties(): Promise<Property[]> {
   await delay(SIMULATED_LATENCY_MS);
   return properties;

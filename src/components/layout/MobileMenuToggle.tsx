@@ -2,12 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-
-const LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/properties", label: "Rooms & Suites" },
-  { href: "/booking", label: "Book" },
-];
+import { NAV_LINKS } from "./nav-links";
 
 export function MobileMenuToggle() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +23,7 @@ export function MobileMenuToggle() {
       {isOpen ? (
         <nav className="absolute inset-x-0 top-full border-t border-cream-line bg-paper">
           <ul className="flex flex-col divide-y divide-cream-line px-6">
-            {LINKS.map((link) => (
+            {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}

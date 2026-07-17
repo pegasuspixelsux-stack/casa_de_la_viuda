@@ -11,6 +11,7 @@ type CalendarProps = {
 
 const WEEKDAY_LABELS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
+// Built as a standalone, reusable component so the future /admin/calendar page can reuse it.
 export function Calendar({
   unavailableDates,
   selectedRange,

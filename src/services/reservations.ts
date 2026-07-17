@@ -6,6 +6,8 @@ import type { Reservation, ReservationRequest } from "@/types/reservation";
 
 const SIMULATED_LATENCY_MS = 400;
 
+// This file is the seam that gets replaced with real Firebase calls; callers don't change.
+// TODO: input is only client-validated today (mock, unpersisted) — add server-side re-validation before this becomes a real write path.
 export async function createReservationRequest(
   input: ReservationRequest
 ): Promise<Reservation> {

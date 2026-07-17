@@ -1,11 +1,6 @@
 import Link from "next/link";
 import { MobileMenuToggle } from "./MobileMenuToggle";
-
-const LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/properties", label: "Rooms & Suites" },
-  { href: "/booking", label: "Book" },
-];
+import { NAV_LINKS } from "./nav-links";
 
 export function Navbar() {
   return (
@@ -16,7 +11,7 @@ export function Navbar() {
           <span className="font-light text-muted">HOTEL</span>
         </Link>
         <nav className="hidden gap-10 text-xs font-medium tracking-[0.2em] text-ink uppercase sm:flex">
-          {LINKS.map((link) => (
+          {NAV_LINKS.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-sage">
               {link.label}
             </Link>

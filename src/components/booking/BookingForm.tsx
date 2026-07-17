@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { createReservationRequest } from "@/services/reservations";
+import { rangeIncludesUnavailable } from "@/lib/dates";
 import type { Property } from "@/types/property";
 import type { ReservationRequest } from "@/types/reservation";
 
@@ -50,6 +51,19 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
     if (!form.checkOut) nextErrors.checkOut = "Choose a check-out date.";
     if (form.checkIn && form.checkOut && form.checkOut <= form.checkIn) {
       nextErrors.checkOut = "Check-out must be after check-in.";
+    }
+    if (
+      form.checkIn &&
+      form.checkOut &&
+      selectedProperty &&
+      rangeIncludesUnavailable(
+        form.checkIn,
+        form.checkOut,
+        selectedProperty.unavailableDates
+      )
+    ) {
+      nextErrors.checkIn =
+        "These dates include an unavailable date. Please choose another range.";
     }
     if (form.guests < 1) {
       nextErrors.guests = "At least 1 guest is required.";
