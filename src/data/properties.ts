@@ -10,6 +10,7 @@ export const properties: Property[] = [
     description:
       "Our largest suite pairs a king bedroom with a separate sitting area and a private terrace overlooking the pool and coastline. Finished in warm oak and linen, the Deluxe Suite is built for slow mornings and long evenings by the water.",
     images: ["Sea-facing terrace", "King bedroom", "Marble soaking tub"],
+    cardImage: "/images/double_room.png",
     amenities: [
       "Private terrace",
       "Soaking tub",
@@ -38,6 +39,7 @@ export const properties: Property[] = [
     description:
       "A calm, light-filled room with direct views over the infinity pool and cabanas. Ideal for couples who want to be steps from the water without giving up quiet.",
     images: ["Pool-view balcony", "Queen bedroom", "Walk-in shower"],
+    cardImage: "/images/single_room_2.png",
     amenities: [
       "Pool view",
       "Walk-in shower",
@@ -59,6 +61,7 @@ export const properties: Property[] = [
     description:
       "The Garden Apartment is a self-contained two-room layout with a small kitchenette, opening directly onto Casa de la Viuda's landscaped gardens. Suited to longer stays or families who want extra space.",
     images: ["Garden terrace", "Living area", "Kitchenette"],
+    cardImage: "/images/single_room.png",
     amenities: [
       "Garden terrace",
       "Kitchenette",

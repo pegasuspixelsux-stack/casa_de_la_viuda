@@ -5,6 +5,7 @@ export type Property = {
   shortDescription: string;
   description: string;
   images: string[];
+  cardImage?: string;
   amenities: string[];
   maxGuests: number;
   sizeSqm: number;
