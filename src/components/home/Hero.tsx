@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 
 export function Hero() {
@@ -10,15 +9,6 @@ export function Hero() {
         className="absolute inset-0 h-full w-full"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/25 via-ink/10 to-ink/40" />
-
-      <div className="absolute inset-x-6 top-10 flex justify-end sm:inset-x-10">
-        <Link
-          href="/booking"
-          className="bg-sage px-6 py-3 text-xs font-medium tracking-[0.2em] text-paper uppercase hover:bg-sage-dark"
-        >
-          Book
-        </Link>
-      </div>
 
       <div className="absolute inset-x-6 bottom-14 text-paper sm:right-10 sm:left-auto sm:max-w-xl sm:text-right">
         <p className="mb-4 text-xs tracking-[0.3em] uppercase">

@@ -4,8 +4,16 @@ import { useState } from "react";
 import Link from "next/link";
 import { NAV_LINKS } from "./nav-links";
 
-export function MobileMenuToggle() {
+type MobileMenuToggleProps = {
+  transparent?: boolean;
+};
+
+export function MobileMenuToggle({ transparent = false }: MobileMenuToggleProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Once open, the dropdown itself is always solid, so the trigger lines
+  // switch back to ink even in transparent mode for contrast against it.
+  const lineColor = transparent && !isOpen ? "bg-paper" : "bg-ink";
 
   return (
     <div className="sm:hidden">
@@ -16,9 +24,9 @@ export function MobileMenuToggle() {
         aria-label="Toggle navigation menu"
         className="flex h-10 w-10 flex-col items-center justify-center gap-1.5"
       >
-        <span className="h-px w-5 bg-ink" />
-        <span className="h-px w-5 bg-ink" />
-        <span className="h-px w-5 bg-ink" />
+        <span className={`h-px w-5 ${lineColor}`} />
+        <span className={`h-px w-5 ${lineColor}`} />
+        <span className={`h-px w-5 ${lineColor}`} />
       </button>
       {isOpen ? (
         <nav className="absolute inset-x-0 top-full border-t border-cream-line bg-paper">
