@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "properties": "Habitaciones y Suites",
+    "book": "Reservar",
+    "toggleMenu": "Alternar menú de navegación",
+    "languageSwitcher": { "en": "EN", "es": "ES" }
+  },
+  "layout": {
+    "title": "Casa de la Viuda",
+    "description": "Un lugar para relajarse y disfrutar la vida. Reservá habitaciones, suites y apartamentos en Casa de la Viuda."
+  },
+  "home": {
+    "hero": {
+      "imageAlt": "La costa rocosa y el faro junto a Casa de la Viuda",
+      "eyebrow": "01 — Bienvenido a Casa de la Viuda",
+      "title": "Grandes Experiencias en Casa de la Viuda",
+      "subtitle": "Un lugar para relajarse y disfrutar la vida"
+    },
+    "about": {
+      "eyebrow": "02 — Sobre Casa de la Viuda",
+      "since": "Desde 1986",
+      "category": "Hotel de Lujo · Resort",
+      "hotlineLabel": "Línea de reservas:",
+      "hotlineAvailability": "Asistencia de reservas disponible las 24 horas",
+      "paragraphOne": "Desde 1986, Casa de la Viuda ha recibido a sus huéspedes en un tranquilo tramo de costa construido alrededor de una sola idea: un lugar para relajarse y disfrutar la vida. Cada habitación y suite está pensada para mañanas tranquilas y largas tardes junto al mar.",
+      "paragraphTwo": "Desde las cabañas junto a la piscina hasta los apartamentos con jardín, cada estadía cuenta con la misma atención al detalle por la que nuestros huéspedes han vuelto durante cuatro décadas de hospitalidad.",
+      "stats": {
+        "rooms": "Habitaciones y Suites",
+        "years": "Años de Hospitalidad",
+        "rating": "Calificación de Huéspedes"
+      }
+    },
+    "featured": {
+      "eyebrow": "03 — Habitaciones y Suites",
+      "title": "Estadías Destacadas",
+      "viewAll": "Ver Todas las Habitaciones y Suites"
+    },
+    "cta": {
+      "eyebrow": "04 — Cuando Estés Listo",
+      "title": "Reservá Tu Estadía en Casa de la Viuda",
+      "body": "Contanos tus fechas y la cantidad de huéspedes — nuestro equipo confirma cada solicitud dentro de las 24 horas.",
+      "button": "Iniciar Solicitud de Reserva"
+    }
+  },
+  "properties": {
+    "metadata": {
+      "title": "Habitaciones y Suites — Casa de la Viuda",
+      "description": "Explorá habitaciones, suites y apartamentos en Casa de la Viuda."
+    },
+    "listing": {
+      "eyebrow": "Alojate con Nosotros",
+      "title": "Habitaciones y Suites"
+    },
+    "guestsUnit": "huéspedes",
+    "detail": {
+      "aboutTitle": "Sobre Esta Habitación",
+      "amenitiesTitle": "Comodidades",
+      "requestToBook": "Solicitar Reserva",
+      "checkAvailability": "Consultar Disponibilidad",
+      "notFoundMetadataTitle": "Habitación no encontrada — Casa de la Viuda"
+    },
+    "notFound": {
+      "eyebrow": "404",
+      "title": "No pudimos encontrar esa habitación",
+      "body": "La habitación o suite que buscás puede haber sido renombrada o ya no está disponible."
+    }
+  },
+  "booking": {
+    "metadata": {
+      "title": "Solicitar una Reserva — Casa de la Viuda",
+      "description": "Solicitá una reserva en Casa de la Viuda."
+    },
+    "heading": {
+      "eyebrow": "Solicitar una Estadía",
+      "title": "Reservá Tu Habitación"
+    },
+    "form": {
+      "labels": {
+        "roomSuite": "Habitación / Suite",
+        "fullName": "Nombre Completo",
+        "email": "Correo Electrónico",
+        "phone": "Teléfono",
+        "guests": "Huéspedes",
+        "checkIn": "Entrada",
+        "checkOut": "Salida",
+        "message": "Mensaje (opcional)"
+      },
+      "errors": {
+        "propertySlug": "Elegí una habitación o suite.",
+        "guestName": "Ingresá tu nombre completo.",
+        "email": "Ingresá un correo electrónico válido.",
+        "phone": "Ingresá un número de teléfono.",
+        "checkIn": "Elegí una fecha de entrada.",
+        "checkOut": "Elegí una fecha de salida.",
+        "checkOutBeforeCheckIn": "La fecha de salida debe ser posterior a la de entrada.",
+        "unavailableRange": "Estas fechas incluyen una fecha no disponible. Elegí otro rango.",
+        "guestsMin": "Se requiere al menos 1 huésped.",
+        "guestsMax": "Esta habitación admite hasta {count} huéspedes."
+      },
+      "submitting": "Enviando Solicitud…",
+      "submit": "Enviar Solicitud de Reserva"
+    },
+    "confirmation": {
+      "eyebrow": "Solicitud Recibida",
+      "title": "Gracias, {name}.",
+      "referencePrefix": "Referencia de confirmación",
+      "referenceSuffix": "Nuestro equipo confirmará la disponibilidad por correo electrónico dentro de las 24 horas."
+    }
+  },
+  "calendar": {
+    "weekdays": ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sá"],
+    "previousMonth": "Mes anterior",
+    "nextMonth": "Mes siguiente",
+    "unavailable": "No disponible",
+    "selected": "Seleccionado"
+  },
+  "gallery": {
+    "noPhotos": "Sin fotos por el momento",
+    "showPhoto": "Mostrar foto: {label}"
+  },
+  "priceTag": {
+    "perNight": "/ noche"
+  }
+}

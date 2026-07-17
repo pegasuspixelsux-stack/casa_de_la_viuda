@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "home": "Home",
+    "properties": "Rooms & Suites",
+    "book": "Book",
+    "toggleMenu": "Toggle navigation menu",
+    "languageSwitcher": { "en": "EN", "es": "ES" }
+  },
+  "layout": {
+    "title": "Casa de la Viuda",
+    "description": "A place to relax and enjoy the life. Book rooms, suites, and apartments at Casa de la Viuda."
+  },
+  "home": {
+    "hero": {
+      "imageAlt": "The rocky coastline and lighthouse by Casa de la Viuda",
+      "eyebrow": "01 — Welcome to Casa de la Viuda",
+      "title": "Great Experiences at Casa de la Viuda",
+      "subtitle": "A place to relax and enjoy the life"
+    },
+    "about": {
+      "eyebrow": "02 — About Casa de la Viuda",
+      "since": "Since 1986",
+      "category": "Luxury Hotel · Resort",
+      "hotlineLabel": "Reservation hotline:",
+      "hotlineAvailability": "Reservation assistance available 24 hours",
+      "paragraphOne": "Since 1986, Casa de la Viuda has welcomed guests to a quiet stretch of coastline built around a single idea: a place to relax and enjoy the life. Every room and suite is designed for slow mornings and long evenings by the water.",
+      "paragraphTwo": "From the poolside cabanas to the garden apartments, every stay comes with the same attention to detail our guests have returned for across four decades of hospitality.",
+      "stats": {
+        "rooms": "Rooms & Suites",
+        "years": "Years of Hospitality",
+        "rating": "Guest Rating"
+      }
+    },
+    "featured": {
+      "eyebrow": "03 — Rooms & Suites",
+      "title": "Featured Stays",
+      "viewAll": "View All Rooms & Suites"
+    },
+    "cta": {
+      "eyebrow": "04 — Ready When You Are",
+      "title": "Request Your Stay at Casa de la Viuda",
+      "body": "Tell us your dates and party size — our team confirms every request within 24 hours.",
+      "button": "Start Booking Request"
+    }
+  },
+  "properties": {
+    "metadata": {
+      "title": "Rooms & Suites — Casa de la Viuda",
+      "description": "Browse rooms, suites, and apartments at Casa de la Viuda."
+    },
+    "listing": {
+      "eyebrow": "Stay With Us",
+      "title": "Rooms & Suites"
+    },
+    "guestsUnit": "guests",
+    "detail": {
+      "aboutTitle": "About This Room",
+      "amenitiesTitle": "Amenities",
+      "requestToBook": "Request to Book",
+      "checkAvailability": "Check Availability",
+      "notFoundMetadataTitle": "Room not found — Casa de la Viuda"
+    },
+    "notFound": {
+      "eyebrow": "404",
+      "title": "We couldn't find that room",
+      "body": "The room or suite you're looking for may have been renamed or is no longer available."
+    }
+  },
+  "booking": {
+    "metadata": {
+      "title": "Request a Booking — Casa de la Viuda",
+      "description": "Request a reservation at Casa de la Viuda."
+    },
+    "heading": {
+      "eyebrow": "Request a Stay",
+      "title": "Book Your Room"
+    },
+    "form": {
+      "labels": {
+        "roomSuite": "Room / Suite",
+        "fullName": "Full Name",
+        "email": "Email",
+        "phone": "Phone",
+        "guests": "Guests",
+        "checkIn": "Check-in",
+        "checkOut": "Check-out",
+        "message": "Message (optional)"
+      },
+      "errors": {
+        "propertySlug": "Choose a room or suite.",
+        "guestName": "Enter your full name.",
+        "email": "Enter a valid email.",
+        "phone": "Enter a phone number.",
+        "checkIn": "Choose a check-in date.",
+        "checkOut": "Choose a check-out date.",
+        "checkOutBeforeCheckIn": "Check-out must be after check-in.",
+        "unavailableRange": "These dates include an unavailable date. Please choose another range.",
+        "guestsMin": "At least 1 guest is required.",
+        "guestsMax": "This room sleeps up to {count} guests."
+      },
+      "submitting": "Sending Request…",
+      "submit": "Send Booking Request"
+    },
+    "confirmation": {
+      "eyebrow": "Request Received",
+      "title": "Thank you, {name}.",
+      "referencePrefix": "Confirmation reference",
+      "referenceSuffix": "Our team will confirm availability by email within 24 hours."
+    }
+  },
+  "calendar": {
+    "weekdays": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month",
+    "unavailable": "Unavailable",
+    "selected": "Selected"
+  },
+  "gallery": {
+    "noPhotos": "No photos yet",
+    "showPhoto": "Show photo: {label}"
+  },
+  "priceTag": {
+    "perNight": "/ night"
+  }
+}
