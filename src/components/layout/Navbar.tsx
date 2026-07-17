@@ -45,9 +45,10 @@ export function Navbar() {
             href="/"
             className={`text-xl tracking-wide ${isTransparent ? "text-paper" : "text-ink"}`}
           >
-            <span className="font-semibold">ESKOR</span>
+            <span className="font-semibold">CASA</span>
             <span className={isTransparent ? "font-light text-paper/70" : "font-light text-muted"}>
-              HOTEL
+              {" "}
+              DE LA VIUDA
             </span>
           </Link>
           <nav

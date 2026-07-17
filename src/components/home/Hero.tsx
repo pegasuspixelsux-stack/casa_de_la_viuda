@@ -5,7 +5,7 @@ export function Hero() {
     <section className="relative aspect-[16/8.8] w-full sm:aspect-[16/7.36]">
       <Image
         src="/images/hero-coastline.jpg"
-        alt="The rocky coastline and lighthouse by Eskor Hotel"
+        alt="The rocky coastline and lighthouse by Casa de la Viuda"
         fill
         priority
         sizes="100vw"
@@ -15,10 +15,10 @@ export function Hero() {
 
       <div className="absolute inset-x-6 bottom-14 text-paper sm:right-10 sm:left-auto sm:max-w-xl sm:text-right">
         <p className="mb-4 text-xs tracking-[0.3em] uppercase">
-          01 — Welcome to Eskor Hotel
+          01 — Welcome to Casa de la Viuda
         </p>
         <h1 className="font-display text-4xl leading-[1.1] font-normal sm:text-6xl">
-          Great Experiences at the Eskor Hotel
+          Great Experiences at Casa de la Viuda
         </h1>
         <p className="mt-5 text-xs tracking-[0.3em] uppercase">
           A place to relax and enjoy the life

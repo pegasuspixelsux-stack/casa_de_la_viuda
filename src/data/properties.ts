@@ -57,7 +57,7 @@ export const properties: Property[] = [
     category: "Apartment",
     shortDescription: "A two-room apartment opening onto the hotel gardens.",
     description:
-      "The Garden Apartment is a self-contained two-room layout with a small kitchenette, opening directly onto Eskor's landscaped gardens. Suited to longer stays or families who want extra space.",
+      "The Garden Apartment is a self-contained two-room layout with a small kitchenette, opening directly onto Casa de la Viuda's landscaped gardens. Suited to longer stays or families who want extra space.",
     images: ["Garden terrace", "Living area", "Kitchenette"],
     amenities: [
       "Garden terrace",
@@ -78,7 +78,7 @@ export const properties: Property[] = [
     category: "Suite",
     shortDescription: "A compact suite with a reading nook and courtyard view.",
     description:
-      "A refined mid-size suite overlooking Eskor's inner courtyard, with a dedicated reading nook and a deep soaking tub. A quiet counterpoint to the pool-facing rooms.",
+      "A refined mid-size suite overlooking Casa de la Viuda's inner courtyard, with a dedicated reading nook and a deep soaking tub. A quiet counterpoint to the pool-facing rooms.",
     images: ["Courtyard view", "Reading nook", "Soaking tub"],
     amenities: [
       "Courtyard view",
@@ -99,7 +99,7 @@ export const properties: Property[] = [
     category: "Room",
     shortDescription: "A ground-floor room with direct access to a sun terrace.",
     description:
-      "Ground-floor and steps from the shoreline path, the Ocean Terrace Room has its own private sun terrace and outdoor shower — the closest room to the water at Eskor.",
+      "Ground-floor and steps from the shoreline path, the Ocean Terrace Room has its own private sun terrace and outdoor shower — the closest room to the water at Casa de la Viuda.",
     images: ["Private sun terrace", "Outdoor shower", "King bedroom"],
     amenities: [
       "Private terrace",

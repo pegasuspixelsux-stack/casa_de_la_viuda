@@ -16,16 +16,16 @@ export function AboutSection() {
 
       <div className="relative">
         <p className="text-xs font-medium tracking-[0.3em] text-sage uppercase">
-          02 — About Eskor
+          02 — About Casa de la Viuda
         </p>
 
         <div className="mx-auto mt-14 grid max-w-6xl gap-12 text-left sm:grid-cols-[1fr_1.4fr_1.4fr]">
           <div>
             <div className="flex h-14 w-14 items-center justify-center border border-ink font-display text-2xl">
-              H
+              V
             </div>
             <p className="mt-5 text-sm font-semibold tracking-[0.1em]">
-              ESKOR HOTEL — RESORT
+              CASA DE LA VIUDA — RESORT
             </p>
             <p className="mt-2 text-xs text-muted">
               Luxury Hotel · Resort &nbsp; ★★★★★
@@ -40,7 +40,7 @@ export function AboutSection() {
           </div>
 
           <p className="text-sm leading-8 text-ink/70">
-            Since 1986, Eskor Hotel has welcomed guests to a quiet stretch of
+            Since 1986, Casa de la Viuda has welcomed guests to a quiet stretch of
             coastline built around a single idea: a place to relax and enjoy
             the life. Every room and suite is designed for slow mornings and
             long evenings by the water.

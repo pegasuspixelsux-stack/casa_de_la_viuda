@@ -4,8 +4,8 @@ import { BookingForm } from "@/components/booking/BookingForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Request a Booking — Eskor Hotel",
-  description: "Request a reservation at Eskor Hotel.",
+  title: "Request a Booking — Casa de la Viuda",
+  description: "Request a reservation at Casa de la Viuda.",
 };
 
 type BookingPageProps = {

@@ -18,9 +18,9 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Eskor Hotel",
+  title: "Casa de la Viuda",
   description:
-    "A place to relax and enjoy the life. Book rooms, suites, and apartments at Eskor Hotel.",
+    "A place to relax and enjoy the life. Book rooms, suites, and apartments at Casa de la Viuda.",
 };
 
 export default function RootLayout({

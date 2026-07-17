@@ -4,8 +4,8 @@ import { PropertyGrid } from "@/components/properties/PropertyGrid";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Rooms & Suites — Eskor Hotel",
-  description: "Browse rooms, suites, and apartments at Eskor Hotel.",
+  title: "Rooms & Suites — Casa de la Viuda",
+  description: "Browse rooms, suites, and apartments at Casa de la Viuda.",
 };
 
 export default async function PropertiesPage() {

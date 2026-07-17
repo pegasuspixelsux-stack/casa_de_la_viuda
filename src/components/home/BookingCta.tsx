@@ -7,7 +7,7 @@ export function BookingCta() {
         04 — Ready When You Are
       </p>
       <h2 className="mt-4 font-display text-3xl font-medium sm:text-4xl">
-        Request Your Stay at Eskor Hotel
+        Request Your Stay at Casa de la Viuda
       </h2>
       <p className="mx-auto mt-4 max-w-xl text-sm text-paper/70">
         Tell us your dates and party size — our team confirms every request

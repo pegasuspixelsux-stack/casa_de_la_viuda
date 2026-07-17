@@ -20,9 +20,9 @@ export async function generateMetadata({
 }: PropertyPageProps): Promise<Metadata> {
   const { slug } = await params;
   const property = await getPropertyBySlug(slug);
-  if (!property) return { title: "Room not found — Eskor Hotel" };
+  if (!property) return { title: "Room not found — Casa de la Viuda" };
   return {
-    title: `${property.name} — Eskor Hotel`,
+    title: `${property.name} — Casa de la Viuda`,
     description: property.shortDescription,
   };
 }

@@ -1,8 +1,8 @@
 const CONTACT_ITEMS = [
-  "Eskor Hotel and Resort",
-  "Box 16522 Eskor Street, Körle 6007, Germany",
+  "Casa de la Viuda",
+  "Box 16522 Viuda Street, Körle 6007, Germany",
   "+(041) 3454 7890",
-  "info@eskor.de",
+  "info@casadelaviuda.com",
 ];
 
 export function Footer() {
