@@ -1,6 +1,6 @@
 const CONTACT_ITEMS = [
   "Casa de la Viuda",
-  "Box 16522 Viuda Street, Körle 6007, Germany",
+  "Casa de la Viuda, Punta del Diablo",
   "+(041) 3454 7890",
   "info@casadelaviuda.com",
 ];
