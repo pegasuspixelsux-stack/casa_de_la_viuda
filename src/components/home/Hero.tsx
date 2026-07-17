@@ -1,12 +1,15 @@
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
+import Image from "next/image";
 
 export function Hero() {
   return (
     <section className="relative aspect-[16/11] w-full sm:aspect-[16/9.2]">
-      <PhotoPlaceholder
-        label="Pool and hotel hero photograph"
-        variant="dark"
-        className="absolute inset-0 h-full w-full"
+      <Image
+        src="/images/hero-coastline.jpg"
+        alt="The rocky coastline and lighthouse by Eskor Hotel"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/25 via-ink/10 to-ink/40" />
 
