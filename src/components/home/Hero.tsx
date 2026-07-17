@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative aspect-[16/8.8] w-full sm:aspect-[16/7.36]">
+    <section className="relative h-[80vh] w-full sm:h-auto sm:aspect-[16/7.36]">
       <Image
         src="/images/hero-coastline.jpg"
         alt="The rocky coastline and lighthouse by Casa de la Viuda"
