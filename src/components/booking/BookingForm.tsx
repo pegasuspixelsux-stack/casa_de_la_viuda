@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useTranslations } from "next-intl";
 import { createReservationRequest } from "@/services/reservations";
 import { rangeIncludesUnavailable } from "@/lib/dates";
 import type { Property } from "@/types/property";
@@ -14,6 +15,9 @@ type BookingFormProps = {
 type FormErrors = Partial<Record<keyof ReservationRequest, string>>;
 
 export function BookingForm({ properties, initialPropertySlug }: BookingFormProps) {
+  const t = useTranslations("booking.form");
+  const tConfirmation = useTranslations("booking.confirmation");
+
   const initialSlug =
     properties.find((property) => property.slug === initialPropertySlug)
       ?.slug ??
@@ -42,15 +46,14 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
 
   function validate(): FormErrors {
     const nextErrors: FormErrors = {};
-    if (!form.propertySlug) nextErrors.propertySlug = "Choose a room or suite.";
-    if (!form.guestName.trim()) nextErrors.guestName = "Enter your full name.";
-    if (!/^\S+@\S+\.\S+$/.test(form.email))
-      nextErrors.email = "Enter a valid email.";
-    if (!form.phone.trim()) nextErrors.phone = "Enter a phone number.";
-    if (!form.checkIn) nextErrors.checkIn = "Choose a check-in date.";
-    if (!form.checkOut) nextErrors.checkOut = "Choose a check-out date.";
+    if (!form.propertySlug) nextErrors.propertySlug = t("errors.propertySlug");
+    if (!form.guestName.trim()) nextErrors.guestName = t("errors.guestName");
+    if (!/^\S+@\S+\.\S+$/.test(form.email)) nextErrors.email = t("errors.email");
+    if (!form.phone.trim()) nextErrors.phone = t("errors.phone");
+    if (!form.checkIn) nextErrors.checkIn = t("errors.checkIn");
+    if (!form.checkOut) nextErrors.checkOut = t("errors.checkOut");
     if (form.checkIn && form.checkOut && form.checkOut <= form.checkIn) {
-      nextErrors.checkOut = "Check-out must be after check-in.";
+      nextErrors.checkOut = t("errors.checkOutBeforeCheckIn");
     }
     if (
       form.checkIn &&
@@ -62,13 +65,14 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
         selectedProperty.unavailableDates
       )
     ) {
-      nextErrors.checkIn =
-        "These dates include an unavailable date. Please choose another range.";
+      nextErrors.checkIn = t("errors.unavailableRange");
     }
     if (form.guests < 1) {
-      nextErrors.guests = "At least 1 guest is required.";
+      nextErrors.guests = t("errors.guestsMin");
     } else if (selectedProperty && form.guests > selectedProperty.maxGuests) {
-      nextErrors.guests = `This room sleeps up to ${selectedProperty.maxGuests} guests.`;
+      nextErrors.guests = t("errors.guestsMax", {
+        count: selectedProperty.maxGuests,
+      });
     }
     return nextErrors;
   }
@@ -89,15 +93,15 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
     return (
       <div className="border border-sage bg-cream px-8 py-12 text-center">
         <p className="text-xs font-medium tracking-[0.3em] text-sage uppercase">
-          Request Received
+          {tConfirmation("eyebrow")}
         </p>
         <h2 className="mt-4 font-display text-2xl text-ink">
-          Thank you, {form.guestName.split(" ")[0]}.
+          {tConfirmation("title", { name: form.guestName.split(" ")[0] })}
         </h2>
         <p className="mt-3 text-sm text-ink/70">
-          Confirmation reference{" "}
-          <span className="font-medium text-ink">{confirmationId}</span>. Our
-          team will confirm availability by email within 24 hours.
+          {tConfirmation("referencePrefix")}{" "}
+          <span className="font-medium text-ink">{confirmationId}</span>.{" "}
+          {tConfirmation("referenceSuffix")}
         </p>
       </div>
     );
@@ -107,7 +111,7 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
     <form onSubmit={handleSubmit} noValidate className="grid gap-6 sm:grid-cols-2">
       <label className="flex flex-col gap-2 sm:col-span-2">
         <span className="text-xs font-medium tracking-[0.15em] text-muted uppercase">
-          Room / Suite
+          {t("labels.roomSuite")}
         </span>
         <select
           value={form.propertySlug}
@@ -132,7 +136,7 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
 
       <label className="flex flex-col gap-2">
         <span className="text-xs font-medium tracking-[0.15em] text-muted uppercase">
-          Full Name
+          {t("labels.fullName")}
         </span>
         <input
           type="text"
@@ -149,7 +153,7 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
 
       <label className="flex flex-col gap-2">
         <span className="text-xs font-medium tracking-[0.15em] text-muted uppercase">
-          Email
+          {t("labels.email")}
         </span>
         <input
           type="email"
@@ -166,7 +170,7 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
 
       <label className="flex flex-col gap-2">
         <span className="text-xs font-medium tracking-[0.15em] text-muted uppercase">
-          Phone
+          {t("labels.phone")}
         </span>
         <input
           type="tel"
@@ -183,7 +187,7 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
 
       <label className="flex flex-col gap-2">
         <span className="text-xs font-medium tracking-[0.15em] text-muted uppercase">
-          Guests
+          {t("labels.guests")}
         </span>
         <input
           type="number"
@@ -204,7 +208,7 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
 
       <label className="flex flex-col gap-2">
         <span className="text-xs font-medium tracking-[0.15em] text-muted uppercase">
-          Check-in
+          {t("labels.checkIn")}
         </span>
         <input
           type="date"
@@ -221,7 +225,7 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
 
       <label className="flex flex-col gap-2">
         <span className="text-xs font-medium tracking-[0.15em] text-muted uppercase">
-          Check-out
+          {t("labels.checkOut")}
         </span>
         <input
           type="date"
@@ -238,7 +242,7 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
 
       <label className="flex flex-col gap-2 sm:col-span-2">
         <span className="text-xs font-medium tracking-[0.15em] text-muted uppercase">
-          Message (optional)
+          {t("labels.message")}
         </span>
         <textarea
           value={form.message}
@@ -255,7 +259,7 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
         disabled={status === "submitting"}
         className="bg-sage px-8 py-4 text-xs font-medium tracking-[0.2em] text-paper uppercase hover:bg-sage-dark disabled:opacity-60 sm:col-span-2"
       >
-        {status === "submitting" ? "Sending Request…" : "Send Booking Request"}
+        {status === "submitting" ? t("submitting") : t("submit")}
       </button>
     </form>
   );
