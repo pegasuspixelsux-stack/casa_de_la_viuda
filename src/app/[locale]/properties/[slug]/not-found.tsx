@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { NotFoundLink } from "./NotFoundLink";
 
 export default function PropertyNotFound() {
   return (
@@ -13,12 +13,7 @@ export default function PropertyNotFound() {
         The room or suite you&apos;re looking for may have been renamed or is
         no longer available.
       </p>
-      <Link
-        href="/en/properties"
-        className="mt-8 inline-block border border-ink px-8 py-3 text-xs font-medium tracking-[0.2em] text-ink uppercase hover:bg-ink hover:text-paper"
-      >
-        View All Rooms & Suites
-      </Link>
+      <NotFoundLink />
     </div>
   );
 }
