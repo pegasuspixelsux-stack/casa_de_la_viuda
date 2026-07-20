@@ -1,5 +1,8 @@
 "use client";
 
+// Deliberately uses next/link + next/navigation instead of @/i18n/navigation: not-found.js
+// files get no `params`, and any next-intl call here would force [slug] into dynamic
+// rendering, defeating generateStaticParams. Only place in the codebase this applies.
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { routing } from "@/i18n/routing";

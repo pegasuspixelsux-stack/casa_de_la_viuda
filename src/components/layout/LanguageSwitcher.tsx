@@ -10,6 +10,11 @@ type LanguageSwitcherProps = {
   transparent?: boolean;
 };
 
+// Split into Suspense/Content/Fallback because useSearchParams() (needed to preserve the
+// query string across a locale switch) requires a Suspense boundary, and this renders
+// inside the always-visible Navbar/MobileMenuToggle — without it, prod build fails.
+// Fallback is a non-interactive visual twin (useLocale() only) so the fixed Navbar
+// doesn't shift while Content hydrates.
 export function LanguageSwitcher(props: LanguageSwitcherProps) {
   return (
     <Suspense fallback={<LanguageSwitcherFallback {...props} />}>

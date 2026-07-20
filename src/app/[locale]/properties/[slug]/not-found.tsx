@@ -1,5 +1,9 @@
 import { NotFoundLink } from "./NotFoundLink";
 
+// Hardcoded English-only (no next-intl) for the same reason as NotFoundLink: any next-intl
+// usage in a not-found.js boundary forces /[locale]/properties/[slug] dynamic. The <title>
+// from page.tsx's generateMetadata is still localized, so title/body language can mismatch
+// here on purpose — accepted tradeoff, not a bug.
 export default function PropertyNotFound() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-32 text-center sm:px-10">
