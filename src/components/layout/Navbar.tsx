@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { MobileMenuToggle } from "./MobileMenuToggle";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { NAV_LINKS } from "./nav-links";
 
 const NAV_HEIGHT = "h-24";
@@ -12,6 +13,7 @@ export function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
+  const t = useTranslations("nav");
 
   useEffect(() => {
     function handleScroll() {
@@ -52,15 +54,16 @@ export function Navbar() {
             </span>
           </Link>
           <nav
-            className={`hidden gap-10 text-xs font-medium tracking-[0.2em] uppercase sm:flex ${
+            className={`hidden items-center gap-10 text-xs font-medium tracking-[0.2em] uppercase sm:flex ${
               isTransparent ? "text-paper" : "text-ink"
             }`}
           >
             {NAV_LINKS.map((link) => (
               <Link key={link.href} href={link.href} className="hover:text-sage">
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
+            <LanguageSwitcher transparent={isTransparent} />
           </nav>
           <MobileMenuToggle transparent={isTransparent} />
         </div>

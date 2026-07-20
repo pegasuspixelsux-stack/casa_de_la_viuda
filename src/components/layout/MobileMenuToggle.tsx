@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { NAV_LINKS } from "./nav-links";
 
 type MobileMenuToggleProps = {
@@ -10,6 +12,7 @@ type MobileMenuToggleProps = {
 
 export function MobileMenuToggle({ transparent = false }: MobileMenuToggleProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("nav");
 
   // Once open, the dropdown itself is always solid, so the trigger lines
   // switch back to ink even in transparent mode for contrast against it.
@@ -21,7 +24,7 @@ export function MobileMenuToggle({ transparent = false }: MobileMenuToggleProps)
         type="button"
         onClick={() => setIsOpen((open) => !open)}
         aria-expanded={isOpen}
-        aria-label="Toggle navigation menu"
+        aria-label={t("toggleMenu")}
         className="flex h-10 w-10 flex-col items-center justify-center gap-1.5"
       >
         <span className={`h-px w-5 ${lineColor}`} />
@@ -38,10 +41,13 @@ export function MobileMenuToggle({ transparent = false }: MobileMenuToggleProps)
                   onClick={() => setIsOpen(false)}
                   className="block py-4 text-sm tracking-[0.15em] text-ink uppercase"
                 >
-                  {link.label}
+                  {t(link.key)}
                 </Link>
               </li>
             ))}
+            <li className="py-4">
+              <LanguageSwitcher />
+            </li>
           </ul>
         </nav>
       ) : null}
