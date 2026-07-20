@@ -8,9 +8,13 @@ export function addDays(dateISO: string, days: number): string {
   return toISODate(date);
 }
 
-export function formatDateLong(dateISO: string): string {
+export function toIntlLocale(locale: string): string {
+  return locale === "es" ? "es-UY" : "en-US";
+}
+
+export function formatDateLong(dateISO: string, intlLocale = "en-US"): string {
   const date = new Date(`${dateISO}T00:00:00Z`);
-  return new Intl.DateTimeFormat("en-US", {
+  return new Intl.DateTimeFormat(intlLocale, {
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -18,8 +22,8 @@ export function formatDateLong(dateISO: string): string {
   }).format(date);
 }
 
-export function formatPrice(amount: number): string {
-  return new Intl.NumberFormat("en-US", {
+export function formatPrice(amount: number, intlLocale = "en-US"): string {
+  return new Intl.NumberFormat(intlLocale, {
     style: "currency",
     currency: "EUR",
     maximumFractionDigits: 0,

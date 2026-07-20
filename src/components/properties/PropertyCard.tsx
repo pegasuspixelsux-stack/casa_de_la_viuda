@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { PriceTag } from "@/components/ui/PriceTag";
 import type { Property } from "@/types/property";
@@ -9,6 +10,8 @@ type PropertyCardProps = {
 };
 
 export function PropertyCard({ property }: PropertyCardProps) {
+  const t = useTranslations("properties");
+
   return (
     <Link href={`/properties/${property.slug}`} className="group block">
       {property.cardImage ? (
@@ -35,7 +38,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
           {property.name}
         </h3>
         <p className="mt-1 text-sm text-muted">
-          {property.maxGuests} guests · {property.sizeSqm} m² ·{" "}
+          {property.maxGuests} {t("guestsUnit")} · {property.sizeSqm} m² ·{" "}
           {property.bedConfiguration}
         </p>
         <div className="mt-3">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 
 type GalleryProps = {
@@ -9,10 +10,11 @@ type GalleryProps = {
 
 export function Gallery({ images }: GalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const t = useTranslations("gallery");
 
   if (images.length === 0) {
     return (
-      <PhotoPlaceholder label="No photos yet" className="aspect-[16/10] w-full" />
+      <PhotoPlaceholder label={t("noPhotos")} className="aspect-[16/10] w-full" />
     );
   }
 
@@ -30,7 +32,7 @@ export function Gallery({ images }: GalleryProps) {
               key={image}
               type="button"
               onClick={() => setActiveIndex(index)}
-              aria-label={`Show photo: ${image}`}
+              aria-label={t("showPhoto", { label: image })}
               aria-current={index === activeIndex}
               className={`outline-offset-2 ${
                 index === activeIndex ? "outline outline-sage" : ""

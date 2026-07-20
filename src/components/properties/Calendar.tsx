@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { buildMonthGrid, toISODate } from "@/lib/dates";
+import { useLocale, useTranslations } from "next-intl";
+import { buildMonthGrid, toIntlLocale, toISODate } from "@/lib/dates";
 
 type CalendarProps = {
   unavailableDates: string[];
@@ -9,14 +10,17 @@ type CalendarProps = {
   onSelectDate?: (dateISO: string) => void;
 };
 
-const WEEKDAY_LABELS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
-
 // Built as a standalone, reusable component so the future /admin/calendar page can reuse it.
 export function Calendar({
   unavailableDates,
   selectedRange,
   onSelectDate,
 }: CalendarProps) {
+  const t = useTranslations("calendar");
+  const locale = useLocale();
+  const intlLocale = toIntlLocale(locale);
+  const weekdayLabels = t.raw("weekdays") as string[];
+
   const today = useMemo(() => new Date(), []);
   const [viewYear, setViewYear] = useState(today.getFullYear());
   const [viewMonth, setViewMonth] = useState(today.getMonth());
@@ -47,13 +51,14 @@ export function Calendar({
     });
   }
 
-  const monthLabel = new Date(
-    Date.UTC(viewYear, viewMonth, 1)
-  ).toLocaleDateString("en-US", {
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  });
+  const monthLabel = new Date(Date.UTC(viewYear, viewMonth, 1)).toLocaleDateString(
+    intlLocale,
+    {
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    }
+  );
 
   return (
     <div className="border border-cream-line p-6">
@@ -61,7 +66,7 @@ export function Calendar({
         <button
           type="button"
           onClick={goToPreviousMonth}
-          aria-label="Previous month"
+          aria-label={t("previousMonth")}
           className="text-sm text-muted hover:text-ink"
         >
           ‹
@@ -72,7 +77,7 @@ export function Calendar({
         <button
           type="button"
           onClick={goToNextMonth}
-          aria-label="Next month"
+          aria-label={t("nextMonth")}
           className="text-sm text-muted hover:text-ink"
         >
           ›
@@ -80,8 +85,8 @@ export function Calendar({
       </div>
 
       <div className="mt-6 grid grid-cols-7 gap-1 text-center text-xs text-muted">
-        {WEEKDAY_LABELS.map((label) => (
-          <span key={label}>{label}</span>
+        {weekdayLabels.map((label, index) => (
+          <span key={index}>{label}</span>
         ))}
       </div>
 
@@ -115,10 +120,10 @@ export function Calendar({
 
       <div className="mt-6 flex items-center gap-4 text-[11px] text-muted">
         <span className="flex items-center gap-1.5">
-          <span className="h-2.5 w-2.5 bg-cream-line" /> Unavailable
+          <span className="h-2.5 w-2.5 bg-cream-line" /> {t("unavailable")}
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-2.5 w-2.5 bg-sage" /> Selected
+          <span className="h-2.5 w-2.5 bg-sage" /> {t("selected")}
         </span>
       </div>
     </div>
