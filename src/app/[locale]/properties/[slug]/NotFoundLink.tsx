@@ -21,7 +21,7 @@ export function NotFoundLink() {
       href={`/${locale}/properties`}
       className="mt-8 inline-block border border-ink px-8 py-3 text-xs font-medium tracking-[0.2em] text-ink uppercase hover:bg-ink hover:text-paper"
     >
-      View All Rooms & Suites
+      View The Home
     </Link>
   );
 }

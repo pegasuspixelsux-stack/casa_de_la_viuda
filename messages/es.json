@@ -54,11 +54,11 @@
     },
     "guestsUnit": "huéspedes",
     "detail": {
-      "aboutTitle": "Sobre Esta Habitación",
+      "aboutTitle": "Sobre Este Espacio",
       "amenitiesTitle": "Comodidades",
-      "requestToBook": "Solicitar Reserva",
-      "checkAvailability": "Consultar Disponibilidad",
-      "notFoundMetadataTitle": "Habitación no encontrada — Casa de la Viuda"
+      "partOfHomeBody": "Este espacio es parte de Casa de la Viuda y no se reserva por separado. Los huéspedes reservan toda la casa.",
+      "partOfHomeCta": "Reservar la Casa",
+      "notFoundMetadataTitle": "Espacio no encontrado — Casa de la Viuda"
     },
     "notFound": {
       "eyebrow": "404",

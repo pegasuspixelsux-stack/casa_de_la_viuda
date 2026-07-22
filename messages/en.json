@@ -54,11 +54,11 @@
     },
     "guestsUnit": "guests",
     "detail": {
-      "aboutTitle": "About This Room",
+      "aboutTitle": "About This Space",
       "amenitiesTitle": "Amenities",
-      "requestToBook": "Request to Book",
-      "checkAvailability": "Check Availability",
-      "notFoundMetadataTitle": "Room not found — Casa de la Viuda"
+      "partOfHomeBody": "This space is part of Casa de la Viuda and isn't booked separately. Guests reserve the entire home.",
+      "partOfHomeCta": "Reserve the Home",
+      "notFoundMetadataTitle": "Space not found — Casa de la Viuda"
     },
     "notFound": {
       "eyebrow": "404",
