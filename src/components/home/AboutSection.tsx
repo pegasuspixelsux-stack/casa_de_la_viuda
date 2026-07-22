@@ -4,7 +4,7 @@ export function AboutSection() {
   const t = useTranslations("home.about");
 
   const stats = [
-    { label: t("stats.rooms"), value: "10" },
+    { label: t("stats.rooms"), value: "5" },
     { label: t("stats.years"), value: "40" },
     { label: t("stats.rating"), value: "4.9" },
   ];
@@ -29,7 +29,7 @@ export function AboutSection() {
               V
             </div>
             <p className="mt-5 text-sm font-semibold tracking-[0.1em]">
-              CASA DE LA VIUDA — RESORT
+              CASA DE LA VIUDA
             </p>
             <p className="mt-2 text-xs text-muted">
               {t("category")} &nbsp; ★★★★★

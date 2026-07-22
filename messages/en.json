@@ -1,14 +1,14 @@
 {
   "nav": {
     "home": "Home",
-    "properties": "Rooms & Suites",
+    "properties": "The Home",
     "book": "Book",
     "toggleMenu": "Toggle navigation menu",
     "languageSwitcher": { "en": "EN", "es": "ES" }
   },
   "layout": {
     "title": "Casa de la Viuda",
-    "description": "A place to relax and enjoy the life. Book rooms, suites, and apartments at Casa de la Viuda."
+    "description": "A place to relax and enjoy the life. Reserve the entire Casa de la Viuda vacation home."
   },
   "home": {
     "hero": {
@@ -20,21 +20,21 @@
     "about": {
       "eyebrow": "02 — About Casa de la Viuda",
       "since": "Since 1986",
-      "category": "Luxury Hotel · Resort",
+      "category": "Private Vacation Home",
       "hotlineLabel": "Reservation hotline:",
       "hotlineAvailability": "Reservation assistance available 24 hours",
-      "paragraphOne": "Since 1986, Casa de la Viuda has welcomed guests to a quiet stretch of coastline built around a single idea: a place to relax and enjoy the life. Every room and suite is designed for slow mornings and long evenings by the water.",
-      "paragraphTwo": "From the poolside cabanas to the garden apartments, every stay comes with the same attention to detail our guests have returned for across four decades of hospitality.",
+      "paragraphOne": "Since 1986, Casa de la Viuda has welcomed guests to a quiet stretch of coastline built around a single idea: a place to relax and enjoy the life. The entire home — every bedroom, the shared living spaces, and the garden — is reserved by one group of guests at a time.",
+      "paragraphTwo": "From the poolside terrace to the garden-facing kitchen, every stay comes with the same attention to detail our guests have returned for across four decades of hospitality.",
       "stats": {
-        "rooms": "Rooms & Suites",
+        "rooms": "Spaces in the Home",
         "years": "Years of Hospitality",
         "rating": "Guest Rating"
       }
     },
     "featured": {
-      "eyebrow": "03 — Rooms & Suites",
-      "title": "Featured Stays",
-      "viewAll": "View All Rooms & Suites"
+      "eyebrow": "03 — Inside the Home",
+      "title": "Explore the Spaces",
+      "viewAll": "See Every Space"
     },
     "cta": {
       "eyebrow": "04 — Ready When You Are",
@@ -45,14 +45,13 @@
   },
   "properties": {
     "metadata": {
-      "title": "Rooms & Suites — Casa de la Viuda",
-      "description": "Browse rooms, suites, and apartments at Casa de la Viuda."
+      "title": "The Home — Casa de la Viuda",
+      "description": "Explore every space inside Casa de la Viuda, reserved as one whole vacation home."
     },
     "listing": {
       "eyebrow": "Stay With Us",
-      "title": "Rooms & Suites"
+      "title": "The Home"
     },
-    "guestsUnit": "guests",
     "detail": {
       "aboutTitle": "About This Space",
       "amenitiesTitle": "Amenities",
@@ -62,22 +61,21 @@
     },
     "notFound": {
       "eyebrow": "404",
-      "title": "We couldn't find that room",
-      "body": "The room or suite you're looking for may have been renamed or is no longer available."
+      "title": "We couldn't find that space",
+      "body": "The space you're looking for may have been renamed or is no longer part of the home."
     }
   },
   "booking": {
     "metadata": {
       "title": "Request a Booking — Casa de la Viuda",
-      "description": "Request a reservation at Casa de la Viuda."
+      "description": "Request a reservation for the entire Casa de la Viuda vacation home."
     },
     "heading": {
       "eyebrow": "Request a Stay",
-      "title": "Book Your Room"
+      "title": "Reserve the Home"
     },
     "form": {
       "labels": {
-        "roomSuite": "Room / Suite",
         "fullName": "Full Name",
         "email": "Email",
         "phone": "Phone",
@@ -87,7 +85,6 @@
         "message": "Message (optional)"
       },
       "errors": {
-        "propertySlug": "Choose a room or suite.",
         "guestName": "Enter your full name.",
         "email": "Enter a valid email.",
         "phone": "Enter a phone number.",
@@ -96,7 +93,7 @@
         "checkOutBeforeCheckIn": "Check-out must be after check-in.",
         "unavailableRange": "These dates include an unavailable date. Please choose another range.",
         "guestsMin": "At least 1 guest is required.",
-        "guestsMax": "This room sleeps up to {count} guests."
+        "guestsMax": "This home sleeps up to {count} guests."
       },
       "submitting": "Sending Request…",
       "submit": "Send Booking Request"
