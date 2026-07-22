@@ -1,0 +1,41 @@
+import type { HomeListing } from "@/types/property";
+
+export const home: HomeListing = {
+  slug: "casa-de-la-viuda",
+  name: "Casa de la Viuda",
+  description:
+    "Casa de la Viuda is a full vacation home on a quiet stretch of coastline, reserved exclusively for one group of guests at a time. Two bedrooms, a shared living area with a full kitchen, a reading den, and a garden terrace are all included in every stay — nothing in the home is rented separately.",
+  amenities: [
+    "Wi-Fi",
+    "Full kitchen",
+    "Private parking",
+    "Air conditioning",
+    "Garden",
+    "Pool",
+    "BBQ",
+    "Laundry",
+    "Workspace",
+    "Smart TV",
+  ],
+  pricePerNight: 890,
+  maxGuests: 14,
+  unavailableDates: [
+    "2026-07-20",
+    "2026-07-21",
+    "2026-07-22",
+    "2026-07-23",
+    "2026-07-24",
+    "2026-07-25",
+    "2026-07-26",
+    "2026-07-27",
+    "2026-07-28",
+    "2026-07-29",
+    "2026-08-01",
+    "2026-08-02",
+    "2026-08-03",
+    "2026-08-04",
+    "2026-08-05",
+    "2026-08-06",
+    "2026-08-07",
+  ],
+};

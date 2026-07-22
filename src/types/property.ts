@@ -13,3 +13,13 @@ export type Property = {
   bedConfiguration: string;
   unavailableDates: string[];
 };
+
+export type HomeListing = {
+  slug: string;
+  name: string;
+  description: string;
+  amenities: string[];
+  pricePerNight: number;
+  maxGuests: number;
+  unavailableDates: string[];
+};
