@@ -11,11 +11,11 @@ export default function PropertyNotFound() {
         404
       </p>
       <h1 className="mt-4 font-display text-3xl text-ink">
-        We couldn&apos;t find that room
+        We couldn&apos;t find that space
       </h1>
       <p className="mt-4 text-sm text-muted">
-        The room or suite you&apos;re looking for may have been renamed or is
-        no longer available.
+        The space you&apos;re looking for may have been renamed or is no
+        longer part of the home.
       </p>
       <NotFoundLink />
     </div>

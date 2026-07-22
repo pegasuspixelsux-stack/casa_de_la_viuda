@@ -5,8 +5,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getPropertyBySlug, getPropertySlugs } from "@/services/properties";
 import { Gallery } from "@/components/properties/Gallery";
-import { Calendar } from "@/components/properties/Calendar";
-import { PriceTag } from "@/components/ui/PriceTag";
 
 type PropertyPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -38,7 +36,6 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
   setRequestLocale(locale as Locale);
 
   const t = await getTranslations("properties.detail");
-  const tCommon = await getTranslations("properties");
   const property = await getPropertyBySlug(slug);
 
   if (!property) {
@@ -52,8 +49,8 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
       </p>
       <h1 className="mt-3 font-display text-4xl text-ink">{property.name}</h1>
       <p className="mt-3 text-sm text-muted">
-        {property.maxGuests} {tCommon("guestsUnit")} · {property.sizeSqm} m² ·{" "}
-        {property.bedConfiguration}
+        {property.sizeSqm} m²
+        {property.bedConfiguration ? ` · ${property.bedConfiguration}` : ""}
       </p>
 
       <div className="mt-10">
@@ -82,22 +79,15 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
 
         <div>
           <div className="border border-cream-line p-6">
-            <PriceTag pricePerNight={property.pricePerNight} />
+            <p className="text-sm leading-7 text-ink/70">
+              {t("partOfHomeBody")}
+            </p>
             <Link
-              href={`/booking?property=${property.slug}`}
+              href="/booking"
               className="mt-6 block bg-sage px-6 py-3 text-center text-xs font-medium tracking-[0.2em] text-paper uppercase hover:bg-sage-dark"
             >
-              {t("requestToBook")}
+              {t("partOfHomeCta")}
             </Link>
-          </div>
-
-          <div className="mt-8">
-            <h2 className="font-display text-xl text-ink">
-              {t("checkAvailability")}
-            </h2>
-            <div className="mt-4">
-              <Calendar unavailableDates={property.unavailableDates} />
-            </div>
           </div>
         </div>
       </div>

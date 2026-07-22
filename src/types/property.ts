@@ -7,9 +7,16 @@ export type Property = {
   images: string[];
   cardImage?: string;
   amenities: string[];
-  maxGuests: number;
   sizeSqm: number;
+  bedConfiguration?: string;
+};
+
+export type HomeListing = {
+  slug: string;
+  name: string;
+  description: string;
+  amenities: string[];
   pricePerNight: number;
-  bedConfiguration: string;
+  maxGuests: number;
   unavailableDates: string[];
 };
