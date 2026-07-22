@@ -4,28 +4,21 @@ import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { createReservationRequest } from "@/services/reservations";
 import { rangeIncludesUnavailable } from "@/lib/dates";
-import type { Property } from "@/types/property";
+import type { HomeListing } from "@/types/property";
 import type { ReservationRequest } from "@/types/reservation";
 
 type BookingFormProps = {
-  properties: Property[];
-  initialPropertySlug?: string;
+  home: HomeListing;
 };
 
 type FormErrors = Partial<Record<keyof ReservationRequest, string>>;
 
-export function BookingForm({ properties, initialPropertySlug }: BookingFormProps) {
+export function BookingForm({ home }: BookingFormProps) {
   const t = useTranslations("booking.form");
   const tConfirmation = useTranslations("booking.confirmation");
 
-  const initialSlug =
-    properties.find((property) => property.slug === initialPropertySlug)
-      ?.slug ??
-    properties[0]?.slug ??
-    "";
-
   const [form, setForm] = useState<ReservationRequest>({
-    propertySlug: initialSlug,
+    propertySlug: home.slug,
     guestName: "",
     email: "",
     phone: "",
@@ -40,13 +33,8 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
   );
   const [confirmationId, setConfirmationId] = useState<string | null>(null);
 
-  const selectedProperty = properties.find(
-    (property) => property.slug === form.propertySlug
-  );
-
   function validate(): FormErrors {
     const nextErrors: FormErrors = {};
-    if (!form.propertySlug) nextErrors.propertySlug = t("errors.propertySlug");
     if (!form.guestName.trim()) nextErrors.guestName = t("errors.guestName");
     if (!/^\S+@\S+\.\S+$/.test(form.email)) nextErrors.email = t("errors.email");
     if (!form.phone.trim()) nextErrors.phone = t("errors.phone");
@@ -58,21 +46,14 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
     if (
       form.checkIn &&
       form.checkOut &&
-      selectedProperty &&
-      rangeIncludesUnavailable(
-        form.checkIn,
-        form.checkOut,
-        selectedProperty.unavailableDates
-      )
+      rangeIncludesUnavailable(form.checkIn, form.checkOut, home.unavailableDates)
     ) {
       nextErrors.checkIn = t("errors.unavailableRange");
     }
     if (form.guests < 1) {
       nextErrors.guests = t("errors.guestsMin");
-    } else if (selectedProperty && form.guests > selectedProperty.maxGuests) {
-      nextErrors.guests = t("errors.guestsMax", {
-        count: selectedProperty.maxGuests,
-      });
+    } else if (form.guests > home.maxGuests) {
+      nextErrors.guests = t("errors.guestsMax", { count: home.maxGuests });
     }
     return nextErrors;
   }
@@ -109,31 +90,6 @@ export function BookingForm({ properties, initialPropertySlug }: BookingFormProp
 
   return (
     <form onSubmit={handleSubmit} noValidate className="grid gap-6 sm:grid-cols-2">
-      <label className="flex flex-col gap-2 sm:col-span-2">
-        <span className="text-xs font-medium tracking-[0.15em] text-muted uppercase">
-          {t("labels.roomSuite")}
-        </span>
-        <select
-          value={form.propertySlug}
-          onChange={(event) =>
-            setForm((current) => ({
-              ...current,
-              propertySlug: event.target.value,
-            }))
-          }
-          className="border border-cream-line px-4 py-3 text-sm"
-        >
-          {properties.map((property) => (
-            <option key={property.slug} value={property.slug}>
-              {property.name}
-            </option>
-          ))}
-        </select>
-        {errors.propertySlug ? (
-          <span className="text-xs text-red-600">{errors.propertySlug}</span>
-        ) : null}
-      </label>
-
       <label className="flex flex-col gap-2">
         <span className="text-xs font-medium tracking-[0.15em] text-muted uppercase">
           {t("labels.fullName")}
